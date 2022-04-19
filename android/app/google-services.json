@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "896744479537",
+    "project_id": "schoolbus-8479d",
+    "storage_bucket": "schoolbus-8479d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:896744479537:android:900dd4b15b14af44e96e10",
+        "android_client_info": {
+          "package_name": "com.example.driver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "896744479537-k5qcrh28n1eagqle25ldptenlj0oaqhm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnQPuMIfI8F88WgVhgs0CLJZHHGRhfIcU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "896744479537-k5qcrh28n1eagqle25ldptenlj0oaqhm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
