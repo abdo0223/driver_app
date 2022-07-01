@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 
 
 
-class GeneralAlertDialogWidget extends StatelessWidget {
-  const GeneralAlertDialogWidget({Key? key, required this.text}) : super(key: key);
+class GeneralWidgetAlertDialog extends StatelessWidget {
+  const GeneralWidgetAlertDialog({Key? key, required this.text}) : super(key: key);
 
 
   final String text;

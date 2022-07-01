@@ -1,12 +1,14 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:driver/functions/personal_detail_fun.dart';
-import 'package:driver/presentation/widgets/general_widgets/general_appbar_widget.dart';
 import 'package:driver/presentation/widgets/personal_detail_widgets/pd_widget_title.dart';
 import 'package:driver/providers/provider_user_details.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../widgets/general_widgets/general_app_bar_widgets/general_widget_app_bar.dart';
 
 
 
@@ -22,6 +24,10 @@ class _PersonalDetailScreenState extends State<PersonalDetailScreen> {
 
   final PersonalDetailFun _personalDetailFun = PersonalDetailFun();
 
+
+  int count = 0;
+
+
   @override
   void initState() {
     // TODO: implement initState
@@ -33,7 +39,7 @@ class _PersonalDetailScreenState extends State<PersonalDetailScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return GeneralAppBarWidget(
+    return GeneralWidgetAppBar(
         title: 'Profile',
       body: Padding(
         padding: const EdgeInsets.only(left: 20, right: 20),
@@ -42,11 +48,12 @@ class _PersonalDetailScreenState extends State<PersonalDetailScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              const CircleAvatar(
+              CircleAvatar(
                 radius: 63,
-                backgroundColor: Colors.blue,
+                backgroundColor: Theme.of(context).primaryColor,
                 child: CircleAvatar(
-                  backgroundColor: Colors.white,
+                  backgroundImage: NetworkImage(Provider.of<ProviderUserDetails>(context, listen: true)
+                      .profilePic),
                   radius: 60,
                 ),
               ),
@@ -73,8 +80,13 @@ class _PersonalDetailScreenState extends State<PersonalDetailScreen> {
               PdWidgetTitle(title: 'Zone Area', data: Provider.of<ProviderUserDetails>
                 (context, listen: true).zoneArea,
                   iconData: Icons.location_on),
+              PdWidgetTitle(title: 'Card image', data: '',
+                  imageUrl: Provider.of<ProviderUserDetails>
+                    (context, listen: true).cardImage,
+                  iconData: Icons.location_on),
               FlatButton(onPressed: () async{
-                await FirebaseAuth.instance.signOut();
+               await FirebaseAuth.instance.signOut();
+
               }, child: const Text('Logout', style: TextStyle(fontSize: 28,
                   fontWeight: FontWeight.bold))),
             ],

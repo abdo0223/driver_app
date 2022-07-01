@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 
 
 
-class LoginButton extends StatelessWidget {
-  LoginButton({Key? key, required this.function}) : super(key: key);
+class LoginWidgetButton extends StatelessWidget {
+  LoginWidgetButton({Key? key, required this.function}) : super(key: key);
   Function() function;
 
 
@@ -20,8 +20,8 @@ class LoginButton extends StatelessWidget {
       child: FlatButton(
           onPressed: function,
           child: const Text('Login', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22,
-          color: Colors.white
-      ))),
+              color: Colors.white
+          ))),
     );
   }
 }

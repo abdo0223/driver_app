@@ -26,7 +26,10 @@ dependencies:
   firebase_messaging:
   provider:
   intl:
-
+  ntp: ^2.0.0
+  location: ^4.3.0
+  geocoding: ^2.0.1
+  url_launcher: ^6.1.0
 
 
 dev_dependencies:
@@ -48,6 +51,8 @@ flutter:
 
   assets:
     - assets/images/logo.png
+    - assets/images/problem_imgaes/acciedent.png
+    - assets/images/problem_imgaes/damage.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

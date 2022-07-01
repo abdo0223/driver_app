@@ -12,6 +12,8 @@ class ProviderUserDetails with ChangeNotifier{
   Timestamp _licenseExpire = Timestamp(0, 0);
   String _zoneArea = '';
   String _name = '';
+  String _cardImage = '';
+  String _profilePic = '';
   final List<String> _listTextEditingFields = ['', ''];
 
 
@@ -39,14 +41,22 @@ class ProviderUserDetails with ChangeNotifier{
   String get name{
     return _name;
   }
+  String get cardImage{
+    return _cardImage;
+  }
+  String get profilePic{
+    return _profilePic;
+  }
   List<String> get listTextEditingFields{
     return _listTextEditingFields;
   }
 
+
+
   void getUserDetails({required String? token, required String? email, required Timestamp? dateOfBirth,
     required String? mobile, required String? nationalId, required Timestamp? licenseExpire,
-    required String? zoneArea, required String? name
-  }){
+    required String? zoneArea, required String? name, required String? cardImage,
+    required String? profilePic}){
     _token = token!;
     _email = email!;
     _dateOfBirth = dateOfBirth!;
@@ -55,6 +65,8 @@ class ProviderUserDetails with ChangeNotifier{
     _licenseExpire = licenseExpire!;
     _zoneArea = zoneArea!;
     _name = name!;
+    _cardImage = cardImage!;
+    _profilePic = profilePic!;
     notifyListeners();
   }
   void changeControllers({required String controllerText, required int index}){

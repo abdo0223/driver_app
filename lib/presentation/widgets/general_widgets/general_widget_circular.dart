@@ -2,16 +2,16 @@
 
 import 'package:flutter/material.dart';
 
-class GeneralCircularWidget extends StatefulWidget {
-  const GeneralCircularWidget({Key? key, required this.color}) : super(key: key);
+class GeneralWidgetCircular extends StatefulWidget {
+  const GeneralWidgetCircular({Key? key, required this.color}) : super(key: key);
   final Color color;
 
 
   @override
-  _GeneralCircularWidgetState createState() => _GeneralCircularWidgetState();
+  _GeneralWidgetCircularState createState() => _GeneralWidgetCircularState();
 }
 
-class _GeneralCircularWidgetState extends State<GeneralCircularWidget> {
+class _GeneralWidgetCircularState extends State<GeneralWidgetCircular> {
 
 
 

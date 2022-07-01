@@ -4,10 +4,12 @@ import 'package:flutter/material.dart';
 
 
 class PdWidgetTitle extends StatelessWidget {
-  const PdWidgetTitle({Key? key, required this.title, required this.data, required this.iconData}) : super(key: key);
+  const PdWidgetTitle({Key? key, required this.title, required this.data,
+    required this.iconData, this.imageUrl}) : super(key: key);
   final String title;
   final String data;
   final IconData iconData;
+  final String ?imageUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +29,10 @@ class PdWidgetTitle extends StatelessWidget {
           ],
         ),
         const Padding(padding: EdgeInsets.only(bottom: 10)),
+        imageUrl == null?
         Text(data, style: const TextStyle(fontSize: 18,
-            fontWeight: FontWeight.bold, color: Colors.grey)),
+            fontWeight: FontWeight.bold, color: Colors.grey)):
+        Image(image: NetworkImage(imageUrl!)),
       ],
     );
   }

@@ -6,10 +6,9 @@ import 'package:provider/provider.dart';
 
 
 
-class LoginTextField extends StatefulWidget {
-  LoginTextField({Key? key, required this.hintText, required this.iconData,
-    this.password = false, required this.index, required this.isError
-  }) : super(key: key);
+class LoginWidgetTextField extends StatefulWidget {
+  LoginWidgetTextField({Key? key, required this.hintText, required this.iconData,
+    this.password = false, required this.index, required this.isError}) : super(key: key);
   String hintText;
   IconData iconData;
   bool password;
@@ -18,10 +17,10 @@ class LoginTextField extends StatefulWidget {
   void isErrorFun(){isError = false;}
 
   @override
-  State<LoginTextField> createState() => _LoginTextFieldState();
+  State<LoginWidgetTextField> createState() => _LoginWidgetTextFieldState();
 }
 
-class _LoginTextFieldState extends State<LoginTextField> {
+class _LoginWidgetTextFieldState extends State<LoginWidgetTextField> {
 
 
   final OutlineInputBorder _outlineInputBorder = OutlineInputBorder(
@@ -72,9 +71,9 @@ class _LoginTextFieldState extends State<LoginTextField> {
                     hintStyle: TextStyle(fontSize: 25, color: Colors.black.withOpacity(0.6)),
                     prefixIcon: Icon(widget.iconData, size: 30, color: Theme.of(context).primaryColor),
                     suffix: widget.password? IconButton(onPressed: (){
-                     setState(() {
-                       _isSeen = !_isSeen;
-                     });
+                      setState(() {
+                        _isSeen = !_isSeen;
+                      });
                     }, icon: Icon(_isSeen?Icons.visibility:Icons.visibility_off,
                         size: 33, color: Theme.of(context).primaryColor), iconSize: 20):
                     null,
@@ -87,10 +86,10 @@ class _LoginTextFieldState extends State<LoginTextField> {
           ),
           if(widget.isError)
             const Padding(padding: EdgeInsets.only(left: 20),
-            child: Text('This field is required', style: TextStyle( fontSize: 20, color: Colors.red,
-              fontWeight: FontWeight.bold
-            )),
-          )
+              child: Text('This field is required', style: TextStyle( fontSize: 20, color: Colors.red,
+                  fontWeight: FontWeight.bold
+              )),
+            )
         ],
       ),
     );

@@ -1,9 +1,8 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:driver/presentation/widgets/general_widgets/general_alert_dialog_widget.dart';
-import 'package:driver/providers/provider_user_details.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter/material.dart';
+
+
 
 
 class AuthFun{
